@@ -1,0 +1,22 @@
+{
+    "name": "snowfire/mail",
+    "description": "Adds postmark as an additional email driver in Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Emil Sundberg",
+            "email": "emil@snowfire.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "openbuildings/postmark": "0.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Snowfire\\Mail": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
