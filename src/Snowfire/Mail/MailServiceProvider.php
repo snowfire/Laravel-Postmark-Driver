@@ -5,6 +5,16 @@ use Openbuildings\Postmark\Swift_PostmarkTransport;
 class MailServiceProvider extends \Illuminate\Mail\MailServiceProvider {
 
 	/**
+	 * Bootstrap the application events.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		$this->package('snowfire/mail');
+	}
+
+	/**
 	 * Register the Swift Transport instance.
 	 *
 	 * @param  array  $config
