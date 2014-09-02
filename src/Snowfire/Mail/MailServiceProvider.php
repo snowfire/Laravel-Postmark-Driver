@@ -24,32 +24,11 @@ class MailServiceProvider extends \Illuminate\Mail\MailServiceProvider {
 	 */
 	protected function registerSwiftTransport($config)
 	{
-		switch ($config['driver'])
-		{
-			case 'smtp':
-				return $this->registerSmtpTransport($config);
-
-			case 'sendmail':
-				return $this->registerSendmailTransport($config);
-
-			case 'mail':
-				return $this->registerMailTransport($config);
-
-			case 'mailgun':
-				return $this->registerMailgunTransport($config);
-
-			case 'mandrill':
-				return $this->registerMandrillTransport($config);
-
-			case 'postmark':
-				return $this->registerPostmarkTransport($config);
-
-			case 'log':
-				return $this->registerLogTransport($config);
-
-			default:
-				throw new \InvalidArgumentException('Invalid mail driver.');
-		}
+		if ($config['driver'] == 'postmark') {
+        		$this->registerPostmarkTransport($config);
+        	} else {
+        		parent::registerSwiftTransport($config);
+        	}
 	}
 
 	/**
