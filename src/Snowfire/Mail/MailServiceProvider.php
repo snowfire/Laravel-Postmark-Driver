@@ -24,9 +24,12 @@ class MailServiceProvider extends \Illuminate\Mail\MailServiceProvider {
 	 */
 	protected function registerSwiftTransport($config)
 	{
-		if ($config['driver'] == 'postmark') {
+		if ($config['driver'] == 'postmark') 
+		{
         		$this->registerPostmarkTransport($config);
-        	} else {
+        	} 
+        	else 
+        	{
         		parent::registerSwiftTransport($config);
         	}
 	}
@@ -39,7 +42,7 @@ class MailServiceProvider extends \Illuminate\Mail\MailServiceProvider {
 	 */
 	protected function registerPostmarkTransport($config)
 	{
-		$postmark = $this->app['config']->get('services.postmark', array());
+		$postmark = $this->app['config']->get('services.postmark', []);
 
 		$this->app->bindShared('swift.transport', function() use ($postmark)
 		{
