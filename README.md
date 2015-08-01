@@ -2,7 +2,7 @@ Send emails in Laravel with Postmark
 ====================================
 [Postmarkapp](http://postmarkapp.com) is an excellent ESP (Email Service Provider). This package makes it possible to send your emails with Postmark without modifing your code. 
 
-Using Laravel 4? Visit the [`laravel-4` branch](Snowfire/Laravel-Postmark-Driver/tree/laravel-4)
+Using Laravel 4? Visit the [`laravel-4` branch](https://github.com/Snowfire/Laravel-Postmark-Driver/tree/laravel-4)
 
 Add this to your `composer.json`
 
