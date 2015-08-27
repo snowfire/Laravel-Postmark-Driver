@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Snowfire\Mail;
 
 use Openbuildings\Postmark\Swift_PostmarkTransport;
