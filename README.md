@@ -24,4 +24,14 @@ In your config file `services.php` add your postmark api key.
 		'api_key' => ''
 	],
 
+
+Make sure your `.env` is configured as 
+
+    MAIL_DRIVER=postmark
+    MAIL_HOST=smtp.postmarkapp.com
+    MAIL_PORT=587 | 25 | 2525
+    MAIL_USERNAME=[sender email address from postmark server]
+    MAIL_PASSWORD=[servers unique api token]
+
+
 Run a composer update and you are ready to go! 
