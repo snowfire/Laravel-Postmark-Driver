@@ -34,7 +34,7 @@ class PostmarkServiceProvider extends \Illuminate\Mail\MailServiceProvider
     {
         $postmark = $this->app['config']->get('services.postmark', []);
 
-        $this->app['swift.mailer'] = $this->app->share(function ($app) use ($postmark) {
+        $this->app->singleton('swift.mailer', function ($app) use ($postmark) {
             return new Swift_Mailer(
                 new Swift_PostmarkTransport($postmark['api_key'])
             );
